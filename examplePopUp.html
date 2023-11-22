@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example pop up</title>
+  <script src=""></script>
+</head>
+<body>
+
+  <div>
+    <div>
+      <h1>JQuery + CSS - Modal Popup Example</h1>
+      <button onclick="openModal('showLogin')">Login</button>
+    </div>
+
+    <div id="messages"></div>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-body">
+          <h1>Login</h1>
+          <label for="email">Email</label>
+          <input type="text" id="email">
+          <label for="password">Password</label>
+          <input type="password" id="password">
+          <button id="btnLogin">Login</button>
+      </div>
+    </div>
+
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready( function (event) {
+      console.log("Document is ready");
+
+      $("btnShowLoginModal").click(function (event){
+        $("container").style.css("visibility", "visible");
+        event.preventDefault();
+      });
+
+      $("btnLogin").click(
+        function (event){
+        $("container").style.css("visibility", "hidden");
+        event.preventDefault();
+      });
+    });
+    
+  </script>
+</body>
+</html>
