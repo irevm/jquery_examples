@@ -5,6 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Example 3</title>
+  <style>   
+    /* h1 + p::first-letter{
+      font-size: 70px;
+    } */
+  </style>
 </head>
 <body>
   <div>
@@ -16,33 +21,33 @@
     <p class="important">Third paragraph</p>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script>
-    $(document).ready(inicio);
-    function inicio(){
+    $(document).ready(init);
+    function init(){
       /* SELECTORS 
-      $("p") //Selecionar elementos por su etiqueta
-      $("#first") //Seleccionar elementos por su id
-      $(".important") //Seleccionar elementos por su clase
-      $("p[name=first]") //Seleccionar elementos por su atributo
-      $("a[target='_blank']") //Seleccionar elementos por pseudoselectores */
+      $("p") //Select items by their tag
+      $("#first") //Select elements by their id
+      $(".important") //Select elements by their class
+      $("p[name=first]") //Select elements by their attribute
+      $("h1 + p::first-letter") //Select element by a pseudoselectors NOT WORKING WITH JQUERY*/
+      //$("h1 + p::first-letter").css("font-size", "70px");
       
-      //GUARDAR UNA SELECCIÓN EN UNA VARIABLE
-      var parrafos = $("p"); //Guarda los elementos EN EL MOMENTO
+      //STORE A SELECTION IN A VARIABLE
+      var parrafos = $("p"); //Saves the elements at the moment
       
       /* EVENTS
-      Texto: html, text, val.
-      Ratón click, dblclick, mouseover, mouseout, mouseenter, mouseleave.
-      Teclado: keypress, keydown, keyup.
-      Formularios: submit, change, focus, blur.
+      Mouse: click, dblclick, mouseover, mouseout, mouseenter, mouseleave.
+      Keyboard: keypress, keydown, keyup.
+      Forms: submit, change, focus, blur.
       Document/Window: load, resize, scroll, unload */
       
       $("p").on("mouseover", function(){
         //$("p").css("color","red");
+        // Instead of using the selectors, we can use this
         $(this).css("color","red");
       });
       $("p").on("mouseout", function(){
-        //$("p").css("color","black");
         $(this).css("color","black");
       });
       

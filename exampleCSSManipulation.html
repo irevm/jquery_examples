@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example CSS Manipulation</title>
+  <style>
+    .green {
+      color: green;
+    }
+</style>
+</head>
+<body>
+  <h1>Titulo 1</h1>
+  <h3>Titulo 3</h3>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+   $(document).ready(inicio);
+
+    function inicio() {
+      //GET CSS PROPERTIES
+      //Using CSS styles
+      console.log($("h1").css("font-size")); //It returns the pixels of h1
+      //Using CamelCase format
+      console.log($("h1").css("fontSize")); //It returns the pixels of h1
+
+      //EDIT CSS PROPERTIES
+      //A single property
+      $("h1").css("fontSize", "40px");
+      //Some properties
+      $("h1").css({
+        "fontSize": "40px",
+        "color": "red"
+      });
+
+      //EDIT CSS CLASSES
+      $("h3").addClass("green"); //Adds a class
+      $("h3").removeClass("green"); //Deletes a clase
+      $("h3").toggleClass("green"); //Adds a class if the element does not have it; if it does, it removes it
+      $("h3").hasClass("green"); //It returns true/false if the element has the class
+
+      console.log($("h3").hasClass("green"));
+
+      $("h3").on("click", function () {
+        $(this).toggleClass("green");
+      });
+
+      //METHODS TO CHANGE CSS DIMENSIONS
+      //.width(), .heigth(), .innerWidth(), .innerHeight(), .outerWidth(), .outerHeight();
+    }
+  </script>
+</body>
+</html>
