@@ -22,10 +22,10 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script>
     $(document).ready( function () {
-      $("a").mouseover(function (event){
+      $("a").on("mouseover",function (event){
         $("#pfirst").addClass("disallowed");
       });
-      $("a").mouseout(function (event){
+      $("a").on("mouseout", function (event){
         $("#pfirst").removeClass("disallowed");
       });
     });    

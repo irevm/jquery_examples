@@ -69,17 +69,17 @@
         });
 
         //.off: eliminamos el manejador de eventos.
-        $("#quitarEvento").click(quitarEvento);
+        $("#quitarEvento").on("click", quitarEvento);
 
         function quitarEvento() {
           $("p").off();
         }
         //.trigger: simula la ejecución de un evento(click, mouseover)
         //.triggerHandler: tiene diferencias respecto a trigger(ver API)
-        $("#cuenta1").click(function () {
+        $("#cuenta1").on("click", function () {
           $("#contador1").text(parseInt($("#contador1").text()) + 1);
         });
-        $("#cuenta2").click(function () {
+        $("#cuenta2").on("click", function () {
           $("#contador2").text(parseInt($("#contador2").text()) + 1);
           $("#cuenta1").trigger("click");
         });

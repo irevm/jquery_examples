@@ -13,16 +13,21 @@
     <p><a href="https://jquery.com/download/">Download jQuery</a></p>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script>
     $(document).ready( function (event) {
       console.log("Document is ready");
 
-      $("a").click(function (event){
+      $("a").on("click", function (event){
         alert("Hello everybody!");
         event.preventDefault();
       });
     });
+
+    // $(function () {
+    //   console.log("Document is ready");
+
+    // });
     
   </script>
 </body>

@@ -47,7 +47,7 @@
       /*FUNCIONES CALLBACK: los métodos text, html, val y attr tienen una función callback con dos 
       parámetros: el índice del elemento actual en la lista de elementos seleccionados, y el valor orginal
       */
-      $("button#change").click(function(){
+      $("button#change").on("click", function(){
         $("a").attr("href",function(i,original){
           return original + "/nuevo";
         }) 

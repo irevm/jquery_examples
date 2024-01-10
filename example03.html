@@ -37,19 +37,19 @@
       Formularios: submit, change, focus, blur.
       Document/Window: load, resize, scroll, unload */
       
-      $("p").mouseover(function(){
+      $("p").on("mouseover", function(){
         //$("p").css("color","red");
         $(this).css("color","red");
       });
-      $("p").mouseout(function(){
+      $("p").on("mouseout", function(){
         //$("p").css("color","black");
         $(this).css("color","black");
       });
       
-      $("p#first").click(function(){
+      $("p#first").on("click", function(){
         alert("You have clicked the first paragraph") 
       });
-      $("p.important").click(function(){
+      $("p.important").on("click", function(){
         $(this).hide();
       })
     }

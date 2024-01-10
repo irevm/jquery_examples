@@ -47,39 +47,39 @@
       jQuery.fx.speeds.myRapido = 50;
 
       //Ocultar
-      $("#ocultar").click(function () {
+      $("#ocultar").on("click", function () {
         //$("p").hide();
         $("p").hide(1500);
       });
       //Mostrar
-      $("#mostrar").click(function () {
+      $("#mostrar").on("click", function () {
         $("p").show("fast");
       });
       //Toggle
-      $("#toggle").click(function () {
+      $("#toggle").on("click", function () {
         $("p").toggle();
       });
       //***************************
       //fadeIn
-      $("#fadeIn").click(function () {
+      $("#fadeIn").on("click", function () {
         $("#div1").fadeIn();
         $("#div2").fadeIn("slow");
         $("#div3").fadeIn(3000);
       });
       //fadeOut
-      $("#fadeOut").click(function () {
+      $("#fadeOut").on("click", function () {
         $("#div1").fadeOut();
         $("#div2").fadeOut("slow");
         $("#div3").fadeOut(3000);
       });
       //fadeToggle
-      $("#fadeToggle").click(function () {
+      $("#fadeToggle").on("click", function () {
         $("#div1").fadeToggle();
         $("#div2").fadeToggle("slow");
         $("#div3").fadeToggle(3000);
       });
       //fadeTo
-      $("#fadeTo").click(function () {
+      $("#fadeTo").on("click", function () {
         $("#div1").fadeTo("slow", 0.15);
         $("#div2").fadeTo("slow", 0.5);
         $("#div3").fadeTo("slow", 0.8);
@@ -87,21 +87,21 @@
 
       //***************************
       //slideDown
-      $("#slideDown").click(function () {
+      $("#slideDown").on("click", function () {
         $("#panel").slideDown();
       });
       //slideUp
-      $("#slideUp").click(function () {
+      $("#slideUp").on("click", function () {
         $("#panel").slideUp();
       });
       //slideToggle
-      $("#slideToggle").click(function () {
+      $("#slideToggle").on("click", function () {
         $("#panel").slideToggle();
       });
 
       //ANIMACIONES **************************
       //$(selector).animate({parametros},velocidad,function_callback);
-      $("#animar").click(function () {
+      $("#animar").on("click", function () {
         $("#div1").animate({
           left: '250px',
           opacity: '0.5',
@@ -123,23 +123,23 @@
 
       //Parar una animación
       //$(selector).stop(stopAll, goToEnd);
-      $("#pararAnimar").click(function () {
+      $("#pararAnimar").on("click", function () {
         $("#div1").stop(true, true);
       });
 
       //Funciones callback
-      $("#callback").click(function () {
+      $("#callback").on("click", function () {
         $("p").hide(1000, function () {
           alert("El párrafo ha sido ocultado");
         });
       });
-      /*$("#callback").click(function(){
+      /*$("#callback").on("click", function () {
         $("p").hide(1000);
         alert("El párrafo ha sido ocultado");
       });*/
 
       //Encadenamiento de efectos
-      $("#encadenar").click(function () {
+      $("#encadenar").on("click", function () {
         $("p").css("color", "green").hide(2000).delay(500).show(2000);
       });
     }
