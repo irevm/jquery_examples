@@ -16,12 +16,49 @@
   </p>
   The title of the emphasis is: <div></div>
 
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <br>
 
-  <script>
+  <form>
+    <input type="text" />
+    <input type="checkbox" />
+    <input type="checkbox" checked="true"/>
+    <input type="checkbox" checked />
+    <input type="checkbox" checked="checked" />
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <script>
     $(document).ready( function () {
       var title = $("em").attr("title");
       $("div").text(title);
+
+      //https://api.jquery.com/prop/#prop-propertyName
+      // The .prop() method is a convenient way to set the value of properties—especially when 
+      // setting multiple properties, using values returned by a function, or setting values on 
+      // multiple elements at once. 
+      // It should be used when setting selectedIndex, tagName, nodeName, nodeType, ownerDocument, 
+      //defaultChecked, or defaultSelected. Since jQuery 1.6, these properties can no longer be set 
+      // with the .attr() method. They do not have corresponding attributes and are only properties.
+      $("form input").each(function () {
+        console.log($(this));
+        switch ($(this).attr('type')) {
+          // If it is a text input I write with attr()
+          case 'text':
+            $(this).attr('value', 'Hola');
+            break;
+          // If it is a checkbox input I mark it with prop()
+          case 'checkbox':
+            //$(this).prop('checked');
+            console.log($(this).prop('checked'));
+            console.log($(this).attr('checked'));
+            // $(this).prop('checked', false);
+            // $(this).attr('checked', false);
+            // $(this).attr("disabled", true);
+            break;
+        }
+      })
+
+
     });    
   </script>
 </body>
