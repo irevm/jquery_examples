@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example Get and set content</title>
+</head>
+<body>
+  <div id="texts">
+    <h1>Example Get and set content</h1>
+    <p id="first"><span>First paragraph</span></p>
+    <p>Second paragraph</p>
+    <h3>Title</h3>
+    <p class="important">Third paragraph</p>
+    <input value="Input text"/><br/>
+    <a href="https://api.jquery.com/">Link</a><br/>
+    <button id="change">Change</button>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(start);
+    function start(){
+      //GET INFORMACTION OF AN ELEMENT (GET): brackets without parameters
+      console.log($("p#first").html()); //Get html code
+      console.log($("p#first").text()); //Get text
+      console.log($("input").val()); //Get de value of an input
+      
+      //EDIT/ADD INFORMATION OF AN ELEMENT (SET): value inside brackets
+      $("p#first").html("<b>New value paragraph 1</b>"); //Enter html code
+      $("p#first").text("New value paragraph 1"); //Enter text
+      $("input").val("New input value"); //Enter an input value
+      
+      //GET INFORMATION OF AN ATTRIBUTE (GET)
+      console.log($("a").attr("href"));
+      
+      //EDIT/ADD INFORMATION OF AN ATTRIBUTE (SET)
+      //Just an attribute
+      $("a").attr("href","alllinks.html");
+      //Some attributs
+      // $("a").attr({
+      //     "title":"All links",
+      //     "href":"alllinks2.html"
+      // });
+      
+      /*CALLBACK FUNCTIONS: los métodos text, html, val y attr tienen una función callback con dos 
+      parámetros: el índice del elemento actual en la lista de elementos seleccionados, y el valor orginal
+      */
+      $("button#change").on("click", function(){
+        $("a").attr("href",function(i,original){
+          return original + "/nuevo";
+        }) 
+      });
+    }    
+  </script>
+</body>
+</html>
