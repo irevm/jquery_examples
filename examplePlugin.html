@@ -19,7 +19,7 @@
     <p><input type="submit" name="send" value="enviar" /></p>
   </form>
 
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script>
     jQuery.fn.morefields = function(label, name, counter){
       $(this).each(function(){
@@ -28,7 +28,7 @@
         elem.data("name",name);
         elem.data("counter",counter);
 
-        elem.click(function(e){
+        elem.on("click", function(e){
           e.preventDefault();
           elem = $(this);
           label = elem.data("label");

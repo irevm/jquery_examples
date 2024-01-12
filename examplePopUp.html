@@ -5,14 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Example pop up</title>
-  <script src=""></script>
+  <link rel="stylesheet" href="examplePopUp.css">
 </head>
 <body>
 
   <div>
     <div>
       <h1>JQuery + CSS - Modal Popup Example</h1>
-      <button onclick="openModal('showLogin')">Login</button>
+      <button id="btnShowLoginModal">Login</button>
     </div>
 
     <div id="messages"></div>
@@ -30,19 +30,20 @@
 
 </div>
 
-  <script src="https://code.jquery.com/jquery-3.7.0.js" crossorigin="anonymous"></script>
-  <script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
     $(document).ready( function (event) {
       console.log("Document is ready");
 
-      $("btnShowLoginModal").click(function (event){
-        $("container").style.css("visibility", "visible");
+      $("#btnShowLoginModal").on("click",function (event){
+        console.log("open");
+        $("#loginModal").addClass("open");
         event.preventDefault();
       });
 
-      $("btnLogin").click(
-        function (event){
-        $("container").style.css("visibility", "hidden");
+      $("#btnLogin").on("click", function (event){
+        console.log("close");
+        $("#loginModal").removeClass("open");
         event.preventDefault();
       });
     });

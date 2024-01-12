@@ -15,7 +15,7 @@
   <button id="nombre2">Mostrar nombre</button>
   <button id="nombre3">Borrar nombre</button>
   
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script>
     
     $(document).ready(inicio);
@@ -44,13 +44,13 @@
       //MÉTODO DATA
       //$.data (nombre,valor) / (nombre) / (objeto)
       //$.removeData(nombre)
-      $("#nombre").click(function () {
+      $("#nombre").on("click", function () {
         $("div").data("name", "Ada Lovelace");
       });
-      $("#nombre2").click(function () {
+      $("#nombre2").on("click", function () {
         alert($("div").data("name"));
       });
-      $("#nombre3").click(function () {
+      $("#nombre3").on("click", function () {
         $("div").removeData("name");
       });
     }
